@@ -62,7 +62,7 @@ fn main() {
     // string cơ bản cx là con trỏ
     let _s4: &str = "this is reference string";
     println!("reference string value: {}", _s4);
-    // _s3 = _s3 + "Dung" --> this does not work
+    // _s3 = _s3 + "Dung" --> this does not work?
     _s3 = _s3 + _s4;
     println!("string value 3: {}", _s3);
     println!("display substring of string value 3: {}", &_s3[0..7]);
@@ -164,6 +164,21 @@ fn main() {
     selection_sort_array_increase(&mut _my_arr_2);
     println!("Array before sorted: {:?}", _my_arr_2);
     println!("Selection sorted array: {:?}", _my_arr_2);
+
+    // 
+    let mut _string_demo_1 = String::from("Hello");
+    let _string_demo_2 = String::from(",world");
+    // this works
+    // _string_demo_1 =_string_demo_1 + ",random";
+    // this does not work, even if we let mut _string_demo_2 
+    // _string_demo_1 = _string_demo_1 + _string_demo_2;
+    _string_demo_1 = _string_demo_1 + &_string_demo_2;
+    println!("String demo: {}", _string_demo_1);
+
+    let _string_1 = String::from("Demon");
+    let _string_2 = String::from("nic");
+    let _string_3 = _string_1 + &_string_2;
+
 
     // 
     println!("\nHello world, Rust VBI!");
